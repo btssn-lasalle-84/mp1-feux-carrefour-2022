@@ -1,0 +1,153 @@
+<html>
+
+	
+	<head>
+		<title>Projet du Feux de Carrefour</title>
+		<link rel="stylesheet" href="ficheStyle.css">
+		<meta charset="utf-8">
+
+	</head>
+
+
+	<body>
+		<div id="main">	
+			<div id="div1">
+				
+					<div id="centrer"> Projet de Feux de Carrefour</div>
+					<br>	
+			<video id="video" width="100%" height="50%" frameborder="0" autoplay loop>
+				<source src="images/carrefourVideo.mp4" type=video/mp4>
+    				</video>
+			</div>
+			<br>
+			<div id="div1">
+
+				
+			<div id="centrer">Prévisualisation du cycle :</div>
+			<br>
+				<div id="divImage">	
+			<img id="feu1" src="images/feuEteint.jpg" alt="photo">
+			<img id="feu2" src="images/feuEteint.jpg" alt="photo">
+			<img id="feu3" src="images/feuEteint.jpg" alt="photo">
+			<img id="feu4" src="images/feuEteint.jpg" alt="photo">
+			<img id="feu5" src="images/feuEteint.jpg" alt="photo">
+				</div>	
+                        </div>
+			
+
+		
+    
+		</div>
+
+	<div id="boutonCommande">	
+		 <a  class="action-button" onclick="modePanne()" href="#">MODE PANNE</a>
+                 <a  class="action-button" onclick="modeClassique()" href="#">MODE CLASSIQUE</a>
+	       	 <a  class="action-button" onclick="modeAutomatique()" href="#">MODE AUTOMATIQUE</a>
+	</div>	 
+
+
+
+
+		 </script>
+
+
+
+<script>
+	function modePanne() {
+  	var xhttp = new XMLHttpRequest();
+  	xhttp.onreadystatechange = function() {};
+  	xhttp.open("GET", "Include/PANNE.inc.php", true);
+  	xhttp.send();
+	
+	document.getElementById("feu1").src="images/feuOrange.jpg";
+	document.getElementById("feu2").src="images/feuOrange.jpg";
+	document.getElementById("feu3").src="images/feuOrange.jpg";
+	document.getElementById("feu4").src="images/feuOrange.jpg";
+	document.getElementById("feu5").src="images/feuOrange.jpg";
+
+setTimeout(function tempsPause(){
+	document.getElementById("feu1").src="images/feuEteint.jpg";
+        document.getElementById("feu2").src="images/feuEteint.jpg";
+        document.getElementById("feu3").src="images/feuEteint.jpg";
+        document.getElementById("feu4").src="images/feuEteint.jpg";
+        document.getElementById("feu5").src="images/feuEteint.jpg";
+},6000);
+
+setTimeout(function tempsPause(){
+	document.getElementById("feu1").src="images/feuOrange.jpg";
+        document.getElementById("feu2").src="images/feuOrange.jpg";
+        document.getElementById("feu3").src="images/feuOrange.jpg";
+        document.getElementById("feu4").src="images/feuOrange.jpg";
+        document.getElementById("feu5").src="images/feuOrange.jpg";
+},4000);
+
+setTimeout(function tempsPause(){
+	document.getElementById("feu1").src="images/feuEteint.jpg";
+        document.getElementById("feu2").src="images/feuEteint.jpg";
+        document.getElementById("feu3").src="images/feuEteint.jpg";
+        document.getElementById("feu4").src="images/feuEteint.jpg";
+        document.getElementById("feu5").src="images/feuEteint.jpg";
+},2000);
+
+
+}
+</script>
+
+
+<script>
+        function modeClassique() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {};
+        xhttp.open("GET", "Include/CLASSIQUE.inc.php", true);
+        xhttp.send();
+
+        document.getElementById("feu1").src="images/feuVert.jpg";
+        document.getElementById("feu2").src="images/feuVert.jpg";
+        document.getElementById("feu3").src="images/feuOrange.jpg";
+        document.getElementById("feu4").src="images/feuOrange.jpg";
+        document.getElementById("feu5").src="images/feuRouge.jpg";
+
+		setTimeout(function tempsPause(){
+        document.getElementById("feu1").src="images/feuEteint.jpg";
+        document.getElementById("feu2").src="images/feuEteint.jpg";
+        document.getElementById("feu3").src="images/feuEteint.jpg";
+        document.getElementById("feu4").src="images/feuEteint.jpg";
+        document.getElementById("feu5").src="images/feuEteint.jpg";
+	},4000);
+
+
+
+
+setTimeout(function tempsPause(){
+        document.getElementById("feu1").src="images/feuVert.jpg";
+        document.getElementById("feu2").src="images/feuVert.jpg";
+        document.getElementById("feu3").src="images/feuEteint.jpg";
+        document.getElementById("feu4").src="images/feuEteint.jpg";
+        document.getElementById("feu5").src="images/feuVert.jpg";
+	},3000);
+
+setTimeout(function tempsPause(){
+        document.getElementById("feu1").src="images/feuVert.jpg";
+        document.getElementById("feu2").src="images/feuVert.jpg";
+        document.getElementById("feu3").src="images/feuOrange.jpg";
+        document.getElementById("feu4").src="images/feuOrange.jpg";
+        document.getElementById("feu5").src="images/feuRouge.jpg";
+	},2000);
+
+setTimeout(function tempsPause(){
+        document.getElementById("feu1").src="images/feuVert.jpg";
+        document.getElementById("feu2").src="images/feuVert.jpg";
+        document.getElementById("feu3").src="images/feuEteint.jpg";
+        document.getElementById("feu4").src="images/feuEteint.jpg";
+        document.getElementById("feu5").src="images/feuVert.jpg";
+	},1000);
+	
+
+}		
+
+
+
+</script>
+
+	</body>
+</html>

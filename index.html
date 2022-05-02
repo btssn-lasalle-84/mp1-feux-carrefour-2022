@@ -1,0 +1,39 @@
+<html>
+
+
+        <head>
+                <title>Projet du Feux de Carrefour</title>
+                <link rel="stylesheet" href="ficheStyle.css">
+		<meta charset="utf-8">
+        </head>
+
+
+        <body>
+                <div id="main">
+                        <div id="div1">
+
+                                        <div id="centrer"> Projet de Feux de Carrefour</div>
+                                        <br>
+                        <video id="video" width="100%" height="50%" frameborder="0" autoplay loop>
+                                <source src="images/carrefourVideo.mp4" type=video/mp4>
+                                </video>
+                        </div>
+                        <br>
+        </div>
+
+	 <div id="boutonCommande">
+                 <a  class="action-button" onclick="BDD()" href="http://localhost/projetFeux/IHM.html?#">GO !</a>
+	</div>
+
+
+	<script>
+		function BDD() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {};
+        xhttp.open("GET", "Include/BDD.php", true);
+        xhttp.send();
+		}
+	</script>
+
+        </body>
+</html>
