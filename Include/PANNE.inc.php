@@ -1,4 +1,6 @@
 <?php
+
+
 $mysqli = mysqli_connect("localhost", "celian", "password", "FEUX");
 $requete = "SELECT * FROM PANNE";
 $resultat = mysqli_query($mysqli, $requete);

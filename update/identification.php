@@ -1,8 +1,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>PROJET CARREFOUR 2022</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>PROJET FEUX DE CARREFOUR</title>
+  <link rel="stylesheet" type="text/css" href="identification.css">
 </head>
 
 <body>
@@ -45,30 +45,46 @@
           <h1><p>PROJET CARREFOUR 2022</p></h1>
         </div>
         <div class="formbg-outer">
-	 <video id="video" width="100%" height="50%" frameborder="0" autoplay loop>
-                                <source src="images/carrefourVideo.mp4" type=video/mp4>
-                                </video>
-				<br><br><br><br>
-<div id="boutonCommande">
-                 <a  class="action-button" onclick="BDD()" href="http://localhost/CARREFOUR 2022/IHM.html?#">GO !</a>
-</div>
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              <span class="padding-bottom--15">Veuillez créer un utilisateur </span>
+	      <form id="stripe-login" action="index.html" method="POST">
+                <div class="field padding-bottom--24">
+                  <label for="nom">Nom </label>
+                  <input type="user" name="user">
+                </div>
+                <div class="field padding-bottom--24">
+                  <div class="grid--50-50">
+                    <label for="password">Mot de Passe</label>
+                  </div>
+                  <input type="password" name="password">
+                </div>
+                <div class="field padding-bottom--24">
+                 <a href="http://localhost/projetFeux/index.html"><input type="submit" name="submit" value="Continuer"></a>
+                </div>
+              </form>
             </div>
-          </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-	<script>
-                function BDD() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {};
-        xhttp.open("GET", "Include/BDD.php", true);
-        xhttp.send();
-                }
-        </script>
-
 </body>
+<footer>
 
+<?php
+
+
+$user = $_POST['user'];
+$password = $_POST['password'];
+ echo $user;
+printf("%s", $password);
+
+
+?>
+
+
+
+</footer>
 </html>

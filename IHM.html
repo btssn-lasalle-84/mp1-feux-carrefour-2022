@@ -1,99 +1,123 @@
 <html>
+<head>
+  <meta charset="utf-8">
+  <title>IHM CARREFOUR 2022</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-	
-	<head>
-		<title>Projet du Feux de Carrefour</title>
-		<link rel="stylesheet" href="ficheStyle.css">
-		<meta charset="utf-8">
-
-	</head>
-
-
-	<body>
-		<div id="main">	
-			<div id="div1">
-				
-					<div id="centrer"> Projet de Feux de Carrefour</div>
-					<br>	
-			<video id="video" width="100%" height="50%" frameborder="0" autoplay loop>
-				<source src="images/carrefourVideo.mp4" type=video/mp4>
-    				</video>
-			</div>
-			<br>
-			<div id="div1">
-
-				
-			<div id="centrer">Prévisualisation du cycle :</div>
-			<br>
-				<div id="divImage">	
-			<img id="feu1" src="images/feuEteint.jpg" alt="photo">
-			<img id="feu2" src="images/feuEteint.jpg" alt="photo">
-			<img id="feu3" src="images/feuEteint.jpg" alt="photo">
-			<img id="feu4" src="images/feuEteint.jpg" alt="photo">
-			<img id="feu5" src="images/feuEteint.jpg" alt="photo">
-				</div>	
-                        </div>
-			
-
-		
-    
+<body>
+  <div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+      <div class="loginbackground box-background--white padding-top--64">
+        <div class="loginbackground-gridContainer">
+          <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+            <div class="box-root" style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+            </div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+            <div class="box-root box-divider--light-all-2 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+            <div class="box-root box-background--blue800" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+            <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+            <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+            <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+            <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+            <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+            <div class="box-root box-divider--light-all-2 animationRightLeft tans3s" style="flex-grow: 1;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <h1><p>PROJET CARREFOUR 2022</p></h1>
+        </div>
+        <div class="formbg-outer">
+		<div id="divVideo">	
+         <video id="video" autoplay loop>
+             <source src="images/carrefourVideo.mp4" type=video/mp4>
+         </video>
 		</div>
 
-	<div id="boutonCommande">	
-		 <a  class="action-button" onclick="modePanne()" href="#">MODE PANNE</a>
+
+		<div id="centrer">
+			<p>Prévisualisation du Cycle des Feux :</p>
+		</div>
+			<br>
+
+		<div id="divImage">	
+			<img id="feu1" src="images/feuEteint.jpg" alt="photo">
+                        <img id="feu2" src="images/feuEteint.jpg" alt="photo">
+                        <img id="feu3" src="images/feuEteint.jpg" alt="photo">
+                        <img id="feu4" src="images/feuEteint.jpg" alt="photo">
+                        <img id="feu5" src="images/feuEteint.jpg" alt="photo">
+		</div>
+			<br>
+		  <div id="boutonCommande">
+                 <a  class="action-button" onclick="modePanne()" href="#">MODE PANNE</a>
                  <a  class="action-button" onclick="modeClassique()" href="#">MODE CLASSIQUE</a>
-	       	 <a  class="action-button" onclick="modeAutomatique()" href="#">MODE AUTOMATIQUE</a>
-	</div>	 
+                 <a  class="action-button" onclick="modeAutomatique()" href="#">MODE AUTOMATIQUE</a>
+               </div>
+              </div>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
 
-
-
-
-		 </script>
-
-
-
-<script>
-	function modePanne() {
-  	var xhttp = new XMLHttpRequest();
-  	xhttp.onreadystatechange = function() {};
-  	xhttp.open("GET", "Include/PANNE.inc.php", true);
-  	xhttp.send();
-	
-	document.getElementById("feu1").src="images/feuOrange.jpg";
-	document.getElementById("feu2").src="images/feuOrange.jpg";
-	document.getElementById("feu3").src="images/feuOrange.jpg";
-	document.getElementById("feu4").src="images/feuOrange.jpg";
-	document.getElementById("feu5").src="images/feuOrange.jpg";
-
-setTimeout(function tempsPause(){
-	document.getElementById("feu1").src="images/feuEteint.jpg";
-        document.getElementById("feu2").src="images/feuEteint.jpg";
-        document.getElementById("feu3").src="images/feuEteint.jpg";
-        document.getElementById("feu4").src="images/feuEteint.jpg";
-        document.getElementById("feu5").src="images/feuEteint.jpg";
-},6000);
-
-setTimeout(function tempsPause(){
-	document.getElementById("feu1").src="images/feuOrange.jpg";
+	<script>
+        function modePanne() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {};
+        xhttp.open("GET", "Include/PANNE.inc.php", true);
+        xhttp.send();
+        
+        document.getElementById("feu1").src="images/feuOrange.jpg";
         document.getElementById("feu2").src="images/feuOrange.jpg";
         document.getElementById("feu3").src="images/feuOrange.jpg";
         document.getElementById("feu4").src="images/feuOrange.jpg";
         document.getElementById("feu5").src="images/feuOrange.jpg";
-},4000);
 
 setTimeout(function tempsPause(){
-	document.getElementById("feu1").src="images/feuEteint.jpg";
+        document.getElementById("feu1").src="images/feuEteint.jpg";
         document.getElementById("feu2").src="images/feuEteint.jpg";
         document.getElementById("feu3").src="images/feuEteint.jpg";
         document.getElementById("feu4").src="images/feuEteint.jpg";
         document.getElementById("feu5").src="images/feuEteint.jpg";
+},3000);
+
+setTimeout(function tempsPause(){
+        document.getElementById("feu1").src="images/feuOrange.jpg";
+        document.getElementById("feu2").src="images/feuOrange.jpg";
+        document.getElementById("feu3").src="images/feuOrange.jpg";
+        document.getElementById("feu4").src="images/feuOrange.jpg";
+        document.getElementById("feu5").src="images/feuOrange.jpg";
 },2000);
+
+setTimeout(function tempsPause(){
+        document.getElementById("feu1").src="images/feuEteint.jpg";
+        document.getElementById("feu2").src="images/feuEteint.jpg";
+        document.getElementById("feu3").src="images/feuEteint.jpg";
+        document.getElementById("feu4").src="images/feuEteint.jpg";
+        document.getElementById("feu5").src="images/feuEteint.jpg";
+},1000);
 
 
 }
 </script>
-
-
 <script>
         function modeClassique() {
         var xhttp = new XMLHttpRequest();
@@ -107,16 +131,13 @@ setTimeout(function tempsPause(){
         document.getElementById("feu4").src="images/feuOrange.jpg";
         document.getElementById("feu5").src="images/feuRouge.jpg";
 
-		setTimeout(function tempsPause(){
+                setTimeout(function tempsPause(){
         document.getElementById("feu1").src="images/feuEteint.jpg";
         document.getElementById("feu2").src="images/feuEteint.jpg";
         document.getElementById("feu3").src="images/feuEteint.jpg";
         document.getElementById("feu4").src="images/feuEteint.jpg";
         document.getElementById("feu5").src="images/feuEteint.jpg";
-	},4000);
-
-
-
+        },4000);
 
 setTimeout(function tempsPause(){
         document.getElementById("feu1").src="images/feuVert.jpg";
@@ -124,7 +145,7 @@ setTimeout(function tempsPause(){
         document.getElementById("feu3").src="images/feuEteint.jpg";
         document.getElementById("feu4").src="images/feuEteint.jpg";
         document.getElementById("feu5").src="images/feuVert.jpg";
-	},3000);
+        },3000);
 
 setTimeout(function tempsPause(){
         document.getElementById("feu1").src="images/feuVert.jpg";
@@ -132,7 +153,7 @@ setTimeout(function tempsPause(){
         document.getElementById("feu3").src="images/feuOrange.jpg";
         document.getElementById("feu4").src="images/feuOrange.jpg";
         document.getElementById("feu5").src="images/feuRouge.jpg";
-	},2000);
+        },2000);
 
 setTimeout(function tempsPause(){
         document.getElementById("feu1").src="images/feuVert.jpg";
@@ -140,14 +161,10 @@ setTimeout(function tempsPause(){
         document.getElementById("feu3").src="images/feuEteint.jpg";
         document.getElementById("feu4").src="images/feuEteint.jpg";
         document.getElementById("feu5").src="images/feuVert.jpg";
-	},1000);
-	
-
-}		
-
-
+        },1000);
+}               
 
 </script>
-
-	</body>
+</body>
 </html>
+
