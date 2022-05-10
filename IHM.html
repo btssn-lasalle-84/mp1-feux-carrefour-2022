@@ -66,9 +66,9 @@
 		</div>
 			<br>
 		  <div id="boutonCommande">
-                 <a  class="action-button" onclick="modePanne()" href="#">MODE PANNE</a>
+                 <a  class="action-button" onclick="modeMaintenance()" href="#">MODE MAINTENANCE</a>
                  <a  class="action-button" onclick="modeClassique()" href="#">MODE CLASSIQUE</a>
-                 <a  class="action-button" onclick="modeAutomatique()" href="#">MODE AUTOMATIQUE</a>
+                 <a  class="action-button" onclick="modeNuit()" href="#">MODE NUIT</a>
                </div>
               </div>
              </div>
@@ -79,10 +79,10 @@
    </div>
 
 	<script>
-        function modePanne() {
+        function modeMaintenance() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {};
-        xhttp.open("GET", "Include/PANNE.inc.php", true);
+        xhttp.open("GET", "Include/MAINTENANCE.inc.php", true);
         xhttp.send();
         
         document.getElementById("feu1").src="images/feuOrange.jpg";
@@ -165,6 +165,55 @@ setTimeout(function tempsPause(){
 }               
 
 </script>
+
+<script>
+        function modeNuit() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {};
+        xhttp.open("GET", "Include/NUIT.inc.php", true);
+        xhttp.send();
+
+        document.getElementById("feu1").src="images/feuOrange.jpg";
+        document.getElementById("feu2").src="images/feuOrange.jpg";
+        document.getElementById("feu3").src="images/feuVert.jpg";
+        document.getElementById("feu4").src="images/feuVert.jpg";
+        document.getElementById("feu5").src="images/feuRouge.jpg";
+
+                setTimeout(function tempsPause(){
+        document.getElementById("feu1").src="images/feuEteint.jpg";
+        document.getElementById("feu2").src="images/feuEteint.jpg";
+        document.getElementById("feu3").src="images/feuEteint.jpg";
+        document.getElementById("feu4").src="images/feuEteint.jpg";
+        document.getElementById("feu5").src="images/feuEteint.jpg";
+        },4000);
+
+setTimeout(function tempsPause(){
+        document.getElementById("feu1").src="images/feuEteint.jpg";
+        document.getElementById("feu2").src="images/feuEteint.jpg";
+        document.getElementById("feu3").src="images/feuVert.jpg";
+        document.getElementById("feu4").src="images/feuVert.jpg";
+        document.getElementById("feu5").src="images/feuVert.jpg";
+        },3000);
+
+setTimeout(function tempsPause(){
+        document.getElementById("feu1").src="images/feuOrange.jpg";
+        document.getElementById("feu2").src="images/feuOrange.jpg";
+        document.getElementById("feu3").src="images/feuVert.jpg";
+        document.getElementById("feu4").src="images/feuVert.jpg";
+        document.getElementById("feu5").src="images/feuRouge.jpg";
+        },2000);
+
+setTimeout(function tempsPause(){
+        document.getElementById("feu1").src="images/feuEteint.jpg";
+        document.getElementById("feu2").src="images/feuEteint.jpg";
+        document.getElementById("feu3").src="images/feuVert.jpg";
+        document.getElementById("feu4").src="images/feuVert.jpg";
+        document.getElementById("feu5").src="images/feuVert.jpg";
+        },1000);
+}
+
+</script>
+
 </body>
 </html>
 

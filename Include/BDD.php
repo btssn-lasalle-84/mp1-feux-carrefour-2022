@@ -6,7 +6,7 @@ if (!$mysqli)
 	exit("Erreur de connexion au serveur de base de données !");
 }
 
-$fichier = "BDD.sql";
+$fichier = "bddCopie.sql";
 if (!file_exists($fichier))
 {
     exit("Erreur fichier $fichier !");
