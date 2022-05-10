@@ -1,23 +1,32 @@
-<?php 
-
+<?php
 
 $mysqli = mysqli_connect("localhost", "celian", "password");
-
-if ($mysqli != false) 
+if (!$mysqli)
 {
-	echo "test";
+	exit("Erreur de connexion au serveur de base de données !");
 }
 
+$fichier = "BDD.sql";
+if (!file_exists($fichier))
+{
+    exit("Erreur fichier $fichier !");
+}
 
-    $req = file_get_contents("BDD.sql");
-    $array = explode(PHP_EOL, $req);
-    foreach ($array as $sql) {
-        if ($sql != '') {
-            mysqli_query($mysqli, $sql);
-        }
+$contenu = file_get_contents($fichier);
+if (!$contenu)
+{
+    exit("Erreur récupération contenu $fichier !");
+}
+
+$requetes = explode(PHP_EOL, $contenu);
+foreach ($requetes as $requete)
+{
+    if (!empty($requete))
+    {
+        //var_dump($requete);
+        mysqli_query($mysqli, $requete);
     }
+}
 
-
-
-mysql_close($mysqli);
+$mysqli->close();
 ?>
